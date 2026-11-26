@@ -1,0 +1,385 @@
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Oasi Osteria del Mare - La cucina di mare a Licata.">
+  <title>Oasi | Osteria del Mare</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --petrol: #304B50;
+      --turquoise: #078F83;
+      --bluegrey: #8999A5;
+      --cream: #F5F3EE;
+      --white: #FFFFFF;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Georgia, 'Times New Roman', serif;
+      background: var(--cream);
+      color: var(--petrol);
+    }
+
+    header {
+      background: var(--petrol);
+      padding: 18px 7%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: white;
+      text-decoration: none;
+    }
+
+    .brand img {
+      width: 55px;
+      height: 55px;
+      object-fit: contain;
+      border-radius: 4px;
+    }
+
+    .brand-name {
+      font-size: 23px;
+      letter-spacing: 4px;
+    }
+
+    .brand-name small {
+      display: block;
+      font-family: Arial, sans-serif;
+      font-size: 9px;
+      letter-spacing: 2px;
+      margin-top: 4px;
+    }
+
+    nav {
+      display: flex;
+      gap: 28px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      letter-spacing: 1px;
+      transition: color .3s;
+    }
+
+    nav a:hover {
+      color: #39C5B4;
+    }
+
+    .hero {
+      min-height: 630px;
+      background:
+        linear-gradient(120deg, rgba(24,53,57,.96), rgba(7,143,131,.72)),
+        radial-gradient(ellipse at 80% 40%, #78aaa6, #304B50);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      padding: 70px 20px;
+    }
+
+    .hero-content {
+      max-width: 750px;
+    }
+
+    .eyebrow {
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: #8FE0D4;
+      margin-bottom: 25px;
+    }
+
+    .hero h1 {
+      font-size: clamp(48px, 9vw, 88px);
+      font-weight: normal;
+      letter-spacing: 7px;
+      margin-bottom: 15px;
+    }
+
+    .hero h2 {
+      font-size: 17px;
+      font-weight: normal;
+      letter-spacing: 6px;
+      margin-bottom: 30px;
+    }
+
+    .hero p {
+      font-family: Arial, sans-serif;
+      font-size: 15px;
+      line-height: 1.8;
+      max-width: 520px;
+      margin: auto auto 35px;
+      color: #E3EEEB;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 16px 32px;
+      border: 1px solid #8FE0D4;
+      color: white;
+      text-decoration: none;
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+      letter-spacing: 2px;
+      transition: .3s;
+    }
+
+    .button:hover {
+      background: var(--turquoise);
+      border-color: var(--turquoise);
+    }
+
+    section {
+      padding: 100px 8%;
+    }
+
+    .intro {
+      text-align: center;
+      max-width: 760px;
+      margin: auto;
+    }
+
+    .section-label {
+      color: var(--turquoise);
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    section h2 {
+      font-size: clamp(32px, 5vw, 48px);
+      font-weight: normal;
+      margin-bottom: 25px;
+    }
+
+    .intro p {
+      font-family: Arial, sans-serif;
+      font-size: 15px;
+      line-height: 1.9;
+      color: #647579;
+    }
+
+    .menu-section {
+      background: var(--petrol);
+      color: white;
+      text-align: center;
+    }
+
+    .menu-section .section-label {
+      color: #67D1C1;
+    }
+
+    .menu-section p {
+      font-family: Arial, sans-serif;
+      line-height: 1.9;
+      color: #D0DDDA;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    .menu-link {
+      display: inline-block;
+      margin-top: 30px;
+      color: #8FE0D4;
+      text-decoration: none;
+      border-bottom: 1px solid #8FE0D4;
+      padding-bottom: 8px;
+      font-family: Arial, sans-serif;
+      letter-spacing: 2px;
+      font-size: 12px;
+    }
+
+    .gallery {
+      text-align: center;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 45px;
+    }
+
+    .gallery-placeholder {
+      min-height: 230px;
+      background: linear-gradient(145deg, #8999A5, #304B50);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      letter-spacing: 2px;
+    }
+
+    .contact {
+      background: #E9E8E1;
+      text-align: center;
+    }
+
+    .contact p {
+      font-family: Arial, sans-serif;
+      line-height: 2;
+      color: #647579;
+    }
+
+    footer {
+      background: #243B40;
+      color: #C6D4D1;
+      text-align: center;
+      padding: 30px 15px;
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+      letter-spacing: 1px;
+    }
+
+    @media (max-width: 700px) {
+      header {
+        flex-direction: column;
+        gap: 18px;
+      }
+
+      nav {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      nav a {
+        font-size: 10px;
+      }
+
+      .hero {
+        min-height: 540px;
+      }
+
+      section {
+        padding: 75px 7%;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-placeholder {
+        min-height: 190px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <a href="#" class="brand">
+      <img src="images/logo.jpg" alt="Logo Oasi Osteria del Mare">
+      <span class="brand-name">
+        OASI
+        <small>OSTERIA DEL MARE</small>
+      </span>
+    </a>
+
+    <nav>
+      <a href="#">HOME</a>
+      <a href="#ristorante">RISTORANTE</a>
+      <a href="#menu">MENU</a>
+      <a href="#gallery">GALLERY</a>
+      <a href="#contatti">CONTATTI</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <div class="hero">
+      <div class="hero-content">
+        <div class="eyebrow">LICATA · SICILIA</div>
+        <h1>OASI</h1>
+        <h2>OSTERIA DEL MARE</h2>
+        <p>
+          Il mare, la cucina e il piacere di stare a tavola.
+          Un'esperienza gastronomica da scoprire.
+        </p>
+        <a href="#menu" class="button">SCOPRI IL NOSTRO MENU</a>
+      </div>
+    </div>
+
+    <section id="ristorante">
+      <div class="intro">
+        <div class="section-label">LA NOSTRA IDENTITÀ</div>
+        <h2>Il mare incontra la cucina</h2>
+        <p>
+          Oasi Osteria del Mare è un progetto gastronomico
+          che racconta il legame con il mare e il territorio
+          di Licata. Tradizione, sapori e convivialità
+          sono al centro dell'esperienza.
+        </p>
+      </div>
+    </section>
+
+    <section id="menu" class="menu-section">
+      <div class="section-label">LA NOSTRA CUCINA</div>
+      <h2>Il gusto del mare</h2>
+      <p>
+        Scopri le proposte della cucina e lasciati
+        accompagnare dai sapori del territorio.
+      </p>
+      <a href="#contatti" class="menu-link">RICHIEDI IL MENU</a>
+    </section>
+
+    <section id="gallery" class="gallery">
+      <div class="section-label">GALLERY</div>
+      <h2>Un'esperienza da vivere</h2>
+      <div class="gallery-grid">
+        <div class="gallery-placeholder">I NOSTRI PIATTI</div>
+        <div class="gallery-placeholder">LA NOSTRA CUCINA</div>
+        <div class="gallery-placeholder">IL RISTORANTE</div>
+      </div>
+    </section>
+
+    <section id="contatti" class="contact">
+      <div class="section-label">VI ASPETTIAMO</div>
+      <h2>Vieni a trovarci</h2>
+      <p>
+        Oasi – Osteria del Mare<br>
+        Licata, Sicilia<br>
+        <br>
+        Contattaci per informazioni e prenotazioni.
+      </p>
+    </section>
+
+  </main>
+
+  <footer>
+    OASI · OSTERIA DEL MARE · LICATA
+  </footer>
+
+</body>
+</html>
